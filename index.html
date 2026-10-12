@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzair - Portfolio & Video Editor</title>
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @layer base {
+            body {
+                background-color: #09090b;
+                color: #f4f4f5;
+            }
+        }
+        .glass-nav {
+            background: rgba(9, 9, 11, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(39, 39, 42, 0.4) 0%, rgba(9, 9, 11, 0) 70%);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-zinc-800 selection:text-zinc-100 min-h-screen flex flex-col overflow-x-hidden">
+
+    <!-- Header / Navigation Menu -->
+    <header class="sticky top-0 z-50 w-full border-b border-zinc-800 glass-nav">
+        <div class="max-w-7xl mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+            <a href="#" class="font-bold text-lg tracking-tight flex items-center gap-2">
+                <span class="inline-block w-3 h-3 bg-zinc-100 rounded-sm"></span>
+                Uzair.dev
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-400">
+                <a href="#about" class="hover:text-zinc-100 transition-colors">About</a>
+                <a href="#videos" class="hover:text-zinc-100 transition-colors">Video Edits</a>
+                <a href="#projects" class="hover:text-zinc-100 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-zinc-100 transition-colors">Contact</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#contact" class="inline-flex items-center justify-center rounded-md bg-zinc-50 text-zinc-950 px-4 py-2 text-sm font-medium shadow hover:bg-zinc-200 transition-colors">
+                    Get in Touch
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-btn" aria-label="Toggle Menu" class="md:hidden text-zinc-400 hover:text-zinc-100 focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-zinc-800 bg-zinc-950 px-6 py-4 space-y-3 shadow-xl">
+            <a href="#about" class="block text-zinc-400 hover:text-zinc-100 py-2 transition-colors">About</a>
+            <a href="#videos" class="block text-zinc-400 hover:text-zinc-100 py-2 transition-colors">Video Edits</a>
+            <a href="#projects" class="block text-zinc-400 hover:text-zinc-100 py-2 transition-colors">Projects</a>
+            <a href="#contact" class="block text-zinc-400 hover:text-zinc-100 py-2 transition-colors">Contact</a>
+            <div class="pt-2">
+                <a href="#contact" class="block text-center rounded-md bg-zinc-50 text-zinc-950 px-4 py-2.5 text-sm font-medium shadow">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+        
+        <!-- Hero Section -->
+        <section class="relative py-16 sm:py-24 md:py-32 overflow-hidden border-b border-zinc-900 hero-glow">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <div class="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/50 px-3 py-1 text-xs text-zinc-400 mb-6">
+                    <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Available for frontend development & video editing
+                </div>
+                <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-zinc-100 via-zinc-300 to-zinc-500 bg-clip-text text-transparent leading-tight">
+                    Building web applications & crafting cinematic edits.
+                </h1>
+                <p class="text-base sm:text-lg md:text-xl text-zinc-400 mb-8 sm:mb-10 max-w-2xl mx-auto px-2">
+                    Front-end developer and video editor specialized in CapCut editing, AI visual techniques, and engaging digital content.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4">
+                    <a href="#videos" class="rounded-md bg-zinc-100 text-zinc-950 px-6 py-3 font-medium hover:bg-zinc-200 transition-colors shadow-lg text-center">
+                        View Video Edits
+                    </a>
+                    <a href="#projects" class="rounded-md border border-zinc-800 bg-zinc-900/50 px-6 py-3 font-medium text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 transition-colors text-center">
+                        Explore Code
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Edits Showcase Section -->
+        <section id="videos" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 sm:mb-12 gap-4">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-2">Featured Video Edits</h2>
+                    <p class="text-sm sm:text-base text-zinc-400">Click any card to watch the video directly on OneDrive.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Video Card 1: Quality Compared -->
+                <a href="https://1drv.ms/v/c/e3ed85742547f8bb/IQC6zMun9GUmR48QSJRTV35eAQQMYvrQJJP_WS3_I_UbyF0?e=qWAbET" target="_blank" class="group rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 sm:p-5 hover:border-zinc-500 hover:bg-zinc-900/80 transition-all flex flex-col justify-between shadow-sm cursor-pointer">
+                    <div>
+                        <div class="aspect-video w-full rounded-lg bg-zinc-800 mb-4 overflow-hidden relative flex items-center justify-center group-hover:bg-zinc-700/50 transition-colors">
+                            <i class="fa-solid fa-play text-2xl sm:text-3xl text-zinc-400 group-hover:text-zinc-100 group-hover:scale-110 transition-all"></i>
+                        </div>
+                        <h3 class="font-semibold text-base sm:text-lg mb-1 text-zinc-100 group-hover:text-white">Quality Compared.mp4</h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm mb-4">Detailed side-by-side quality comparison showcasing crisp enhancement and grading tuning.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-zinc-800/60">
+                        <span class="text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-zinc-800 text-zinc-300">CapCut / Grading</span>
+                        <span class="text-xs text-zinc-300 font-medium group-hover:underline flex items-center gap-1">Watch <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
+                    </div>
+                </a>
+
+                <!-- Video Card 2: Merged Edit from person cloning and Animation -->
+                <a href="https://1drv.ms/v/c/e3ed85742547f8bb/IQDhKYTZqIDNRYr0fodFM3iVAcB4aK-blzcLksCEWbmA5yo?e=x33VCw" target="_blank" class="group rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 sm:p-5 hover:border-zinc-500 hover:bg-zinc-900/80 transition-all flex flex-col justify-between shadow-sm cursor-pointer">
+                    <div>
+                        <div class="aspect-video w-full rounded-lg bg-zinc-800 mb-4 overflow-hidden relative flex items-center justify-center group-hover:bg-zinc-700/50 transition-colors">
+                            <i class="fa-solid fa-play text-2xl sm:text-3xl text-zinc-400 group-hover:text-zinc-100 group-hover:scale-110 transition-all"></i>
+                        </div>
+                        <h3 class="font-semibold text-base sm:text-lg mb-1 text-zinc-100 group-hover:text-white">Merged Edit from person cloning and Animation.mp4</h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm mb-4">Advanced hybrid composition blending cloned subjects seamlessly with animation layers.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-zinc-800/60">
+                        <span class="text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-zinc-800 text-zinc-300">VFX / Composite</span>
+                        <span class="text-xs text-zinc-300 font-medium group-hover:underline flex items-center gap-1">Watch <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
+                    </div>
+                </a>
+
+                <!-- Video Card 3: Ai Person Cloning -->
+                <a href="https://1drv.ms/v/c/e3ed85742547f8bb/IQBETlQqI8G_SYyv7sKwy9FuAc6qW6ZefwT6XXkEms-RSsk?e=fnjjRW" target="_blank" class="group rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 sm:p-5 hover:border-zinc-500 hover:bg-zinc-900/80 transition-all flex flex-col justify-between shadow-sm cursor-pointer md:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="aspect-video w-full rounded-lg bg-zinc-800 mb-4 overflow-hidden relative flex items-center justify-center group-hover:bg-zinc-700/50 transition-colors">
+                            <i class="fa-solid fa-play text-2xl sm:text-3xl text-zinc-400 group-hover:text-zinc-100 group-hover:scale-110 transition-all"></i>
+                        </div>
+                        <h3 class="font-semibold text-base sm:text-lg mb-1 text-zinc-100 group-hover:text-white">Ai Person Cloning.mp4</h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm mb-4">Experimental AI visual project isolating and multiplying subjects within dynamic frames.</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-zinc-800/60">
+                        <span class="text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-zinc-800 text-zinc-300">AI Video Editing</span>
+                        <span class="text-xs text-zinc-300 font-medium group-hover:underline flex items-center gap-1">Watch <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Web Development Projects Section -->
+        <section id="projects" class="py-16 sm:py-20 border-t border-zinc-900 bg-zinc-900/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 sm:mb-12 gap-4">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-2">Web Development Projects</h2>
+                        <p class="text-sm sm:text-base text-zinc-400">Front-end portfolios and responsive user interfaces.</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="group rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 sm:p-6 shadow-sm">
+                        <h3 class="font-semibold text-lg sm:text-xl mb-2 text-zinc-100">Developer Portfolio</h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm mb-4">Personal web portfolio featuring smooth scroll animations and CSS transitions.</p>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-zinc-800 text-zinc-300">HTML/CSS</span>
+                    </div>
+                    <div class="group rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 sm:p-6 shadow-sm">
+                        <h3 class="font-semibold text-lg sm:text-xl mb-2 text-zinc-100">Interactive UI Dashboard</h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm mb-4">Modern dashboard interface built with responsive grid systems.</p>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-zinc-800 text-zinc-300">Tailwind</span>
+                    </div>
+                    <div class="group rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 sm:p-6 shadow-sm md:col-span-2 lg:col-span-1">
+                        <h3 class="font-semibold text-lg sm:text-xl mb-2 text-zinc-100">Media Asset Tracker</h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm mb-4">Utility platform designed for organizing media exports efficiently.</p>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-zinc-800 text-zinc-300">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 sm:py-20 border-t border-zinc-900 bg-zinc-900/20">
+            <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3">Let's Work Together</h2>
+                <p class="text-sm sm:text-base text-zinc-400 mb-8">Got a web project or a video editing gig in mind? Send a message below.</p>
+                
+                <form id="contact-form" class="space-y-4 text-left">
+                    <div>
+                        <label class="block text-xs font-medium text-zinc-400 mb-1">Your Name</label>
+                        <input type="text" id="name" required class="w-full rounded-md border border-zinc-800 bg-zinc-900 px-3 py-2 text-sm text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-400" placeholder="Jane Doe">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-zinc-400 mb-1">Email Address</label>
+                        <input type="email" id="email" required class="w-full rounded-md border border-zinc-800 bg-zinc-900 px-3 py-2 text-sm text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-400" placeholder="jane@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-zinc-400 mb-1">Message</label>
+                        <textarea id="message" rows="4" required class="w-full rounded-md border border-zinc-800 bg-zinc-900 px-3 py-2 text-sm text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-400" placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full rounded-md bg-zinc-100 text-zinc-950 py-2.5 font-medium hover:bg-zinc-200 transition-colors cursor-pointer">
+                        Send Message
+                    </button>
+                </form>
+                <div id="form-success" class="hidden mt-4 p-4 rounded-md bg-emerald-950/50 border border-emerald-800 text-emerald-300 text-sm">
+                    Thank you! Your message has been sent successfully.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800 py-8 text-center text-xs sm:text-sm text-zinc-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p>&copy; 2026 Uzair. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Vanilla JavaScript -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            contactForm.reset();
+            contactForm.style.display = 'none';
+            formSuccess.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
